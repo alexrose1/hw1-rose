@@ -101,14 +101,89 @@
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
+DROP TABLE IF EXISTS studios;
+DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS actors;
 
 -- Create new tables, according to your domain model
 -- TODO!
+
+CREATE TABLE actors (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  first_name TEXT,
+  last_name TEXT,
+  character_name TEXT,
+  movie_id INTEGER
+
+);
+
+CREATE TABLE movies (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT,
+  year_produced INTEGER,
+  rating TEXT,
+
+);
+
+CREATE TABLE studios (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  studio_name TEXT,
+  movie_id INTEGER
+
+);
+
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
 
+INSERT INTO actors(
+    id,
+    first_name,
+    last_name,
+    character_name,
+    movie_id
+)
+    VALUES
+    (1, "Christian", "Bale", "Bruce Wayne", 1 ),
+    (2, "Michael", "Caine", "Alfred", 1),
+    (3, "Liam", "Neeson", "Ra's Al Ghul", 1),
+    (4, "Katie", "Holmes", "Rachel Dawes", 1),
+    (5, "Gary", "Oldman", "Commissioner Gordon", 1),
+    (6, "Christian", "Bale", "Bruce Wayne", 2 ),
+    (7, "Heath", "Ledger", "Joker", 2 ),
+    (8, "Aaron", "Eckhart", "Harvey Dent", 2 ),
+    (9, "Michael", "Caine", "Alfred", 2),
+    (10, "Maggie", "Gyllenhaal", "Rachel Dawes", 2),
+    (11, "Christian", "Bale", "Bruce Wayne", 3 ),
+    (12, "Gary", "Oldman", "Commissioner Gordon", 3),
+    (12, "Tom", "Hardy", "Bane", 3),
+    (13, "Joseph", "Gordon-Levitt", "John Blake", 3),
+    (14, "Anne", "Hathaway", "Selina Kyle", 3)
+    ;
+
+INSERT INTO movies(
+    id,
+    title,
+    year_produced,
+    rating
+)
+    VALUES
+    ()
+
+    ;
+
+
+INSERT INTO studios(
+    id,
+    studio_name,
+    movie_id
+)
+
+    VALUES
+
+
+    ;
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
