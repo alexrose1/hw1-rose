@@ -114,7 +114,6 @@ CREATE TABLE actors (
   last_name TEXT,
   character_name TEXT,
   movie_id INTEGER
-
 );
 
 CREATE TABLE movies (
@@ -122,14 +121,12 @@ CREATE TABLE movies (
   title TEXT,
   year_produced INTEGER,
   rating TEXT,
-
+  studio_id INTEGER
 );
 
 CREATE TABLE studios (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  studio_name TEXT,
-  movie_id INTEGER
-
+  studio_name TEXT
 );
 
 
@@ -138,52 +135,52 @@ CREATE TABLE studios (
 -- TODO!
 
 INSERT INTO actors(
-    id,
     first_name,
     last_name,
     character_name,
     movie_id
 )
     VALUES
-    (1, "Christian", "Bale", "Bruce Wayne", 1 ),
-    (2, "Michael", "Caine", "Alfred", 1),
-    (3, "Liam", "Neeson", "Ra's Al Ghul", 1),
-    (4, "Katie", "Holmes", "Rachel Dawes", 1),
-    (5, "Gary", "Oldman", "Commissioner Gordon", 1),
-    (6, "Christian", "Bale", "Bruce Wayne", 2 ),
-    (7, "Heath", "Ledger", "Joker", 2 ),
-    (8, "Aaron", "Eckhart", "Harvey Dent", 2 ),
-    (9, "Michael", "Caine", "Alfred", 2),
-    (10, "Maggie", "Gyllenhaal", "Rachel Dawes", 2),
-    (11, "Christian", "Bale", "Bruce Wayne", 3 ),
-    (12, "Gary", "Oldman", "Commissioner Gordon", 3),
-    (12, "Tom", "Hardy", "Bane", 3),
-    (13, "Joseph", "Gordon-Levitt", "John Blake", 3),
-    (14, "Anne", "Hathaway", "Selina Kyle", 3)
+    ( "Christian", "Bale", "Bruce Wayne", 1 ),
+    ( "Michael", "Caine", "Alfred", 1),
+    ( "Liam", "Neeson", "Ra's Al Ghul", 1),
+    ( "Katie", "Holmes", "Rachel Dawes", 1),
+    ( "Gary", "Oldman", "Commissioner Gordon", 1),
+    ( "Christian", "Bale", "Bruce Wayne", 2 ),
+    ( "Heath", "Ledger", "Joker", 2 ),
+    ( "Aaron", "Eckhart", "Harvey Dent", 2 ),
+    ( "Michael", "Caine", "Alfred", 2),
+    ( "Maggie", "Gyllenhaal", "Rachel Dawes", 2),
+    ( "Christian", "Bale", "Bruce Wayne", 3 ),
+    ( "Gary", "Oldman", "Commissioner Gordon", 3),
+    ( "Tom", "Hardy", "Bane", 3),
+    ( "Joseph", "Gordon-Levitt", "John Blake", 3),
+    ("Anne", "Hathaway", "Selina Kyle", 3)
     ;
 
 INSERT INTO movies(
     id,
     title,
     year_produced,
-    rating
+    rating,
+    studio_id
 )
     VALUES
-    ()
-
+    (1, "Batman Begins", 2005, "PG-13", 1),
+    (2, "The Dark Knight", 2008, "PG-13", 1),
+    (3, "The Dark Knight Rises", 2014, "PG-13", 1)
     ;
 
 
 INSERT INTO studios(
     id,
-    studio_name,
-    movie_id
+    studio_name
 )
 
     VALUES
+    (1, "Warner Bros.");
 
 
-    ;
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
@@ -191,6 +188,7 @@ INSERT INTO studios(
 
 -- The SQL statement for the movies output
 -- TODO!
+SELECT * FROM movies;
 
 -- Prints a header for the cast output
 .print ""
@@ -201,3 +199,5 @@ INSERT INTO studios(
 
 -- The SQL statement for the cast output
 -- TODO!
+
+SELECT * FROM actors;
